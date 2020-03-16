@@ -1,0 +1,19 @@
+.modal_header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+}
+
+ul {
+    border-bottom: 1px solid #eee;
+    li {
+        margin-bottom: 24px;
+        .title {
+            font-family: "Gilroy-Bold";
+        }
+        .duration {
+            margin-top: 8px;
+            text-transform: lowercase;
+        }
+    }
+}

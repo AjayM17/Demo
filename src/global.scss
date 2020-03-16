@@ -24,3 +24,30 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.header-md:after{
+    background-image: none;
+}
+
+ion-title{
+    font-family: 'Gilroy-Bold';
+    .items{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+ion-toolbar{
+    --background: var(--ion-color-tooling);
+    color:white;
+    text-align: center;
+}
+
+
+.map{
+    background-image: url('./assets//icon//map.png');
+    width: 18px;
+    height: 22px;   
+    background-size: cover;
+}

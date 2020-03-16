@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+   <div class="modal_header">
+     <span (click)="close()" style="margin-left: 14px;">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+     </span>
+     <span style="flex:1">
+       Agenda
+     </span>
+   </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ul >
+<li *ngFor="let item of agenda">
+  <div class="title">
+    {{item.title}}
+  </div>
+  <div class="duration">
+    {{item.timingStart | date:'h:mm a'}} -
+    {{item.timingEnd | date:'h:mm a'}}
+  </div>
+</li>
+</ul>
+</ion-content>

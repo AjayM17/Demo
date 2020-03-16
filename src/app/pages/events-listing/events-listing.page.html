@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <div class="items">
+        <div style="flex: 2;">
+          Events
+        </div>
+        <div class="help">
+          HELP
+        </div>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="feature-events">
+    <div class="heading">
+      Featured
+    </div>
+    <div class="feature-hori-list">
+      <ion-card *ngFor="let event of events" (click)="goToEventDetailsPage()">
+        <div class="card-image" [ngStyle]="{'background-image': 'url(' + event.featuredImage.url + ')'}">
+        </div>
+        <div class="card-details">
+          <div class="card-title ">
+            {{event.title}}
+          </div>
+          <div class="time">
+            <span>
+              <ion-icon name="calendar-outline"></ion-icon> {{event.scheduleStart | date:'E dd LLL'}} -
+              {{event.scheduleEnd | date:'E dd LLL'}}
+            </span>
+          </div>
+          <div class="time" style="text-transform: lowercase;">
+            <span>
+              <ion-icon name="time-outline"></ion-icon> {{event.scheduleStart | date:'h:mm a'}} -
+              {{event.scheduleEnd | date:'h:mm a'}}
+            </span>
+          </div>
+        </div>
+      </ion-card>
+    </div>
+
+    <div class="feature-ver-list">
+      <ion-card *ngFor="let event of events" (click)="goToEventDetailsPage()">
+        <div class="card-image" [ngStyle]="{'background-image': 'url(' + event.featuredImage.url + ')'}">
+        </div>
+        <div class="card-details">
+          <div class="card-time">
+           <span class="month"> {{event.scheduleStart | date:'LLL'}}</span>
+           <span class="date"> {{event.scheduleStart | date:'dd'}}</span>
+          </div>
+          <div class="card-info">
+            <div class="card-title ">
+              {{event.title}}
+            </div>
+            <div class="time">
+             
+                <ion-icon name="time-outline"></ion-icon>
+                <span style="  margin-left: 20px;">
+                  {{event.scheduleStart |  date:'h:mm a'}} -
+                  {{event.scheduleEnd |  date:'h:mm a'}}
+                </span>
+             
+            </div>
+            <div class="time">
+           
+              <ion-icon  class="ruppe"></ion-icon>
+              <span style="  margin-left: 20px;">
+                {{event.price}}
+              </span>
+            </div>
+          </div>
+        
+        </div>
+      </ion-card>
+    </div>
+  </div>
+
+
+</ion-content>

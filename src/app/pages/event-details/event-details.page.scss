@@ -1,0 +1,256 @@
+.featured-image {
+    width: 100%;
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.event-details {
+    padding: 16px 12px;
+
+    border-bottom: 1px solid #eee;
+
+    .title {
+        display: flex;
+        justify-content: space-between;
+        font-size: 24px;
+        font-weight: 600;
+        font-family: 'Gilroy-Bold';
+    }
+
+    .duration {
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        font-family: "Gilroy-Bold";
+        padding: 10px 0px;
+        font-size: 14px;
+        color: var(--ion-color-step-700);
+    }
+
+    .location {
+        display: flex;
+        padding: 10px 0px;
+        font-size: 14px;
+
+        font-family: "Gilroy-Bold";
+
+
+        color: var(--ion-color-step-700);
+        .ruppe{
+            background-image: url('../../../assets//icon/rupee.png');
+            width: 12px;
+            height: 18px;
+            background-size: cover;
+        }
+    }
+
+
+}
+
+.interested {
+    display: flex;
+    font-size: 14px;
+    padding: 16px 12px;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+
+    .text {
+        font-family: "Gilroy-Bold";
+        color: var(--ion-color-step-500);
+    }
+
+    .interested_box {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        padding: 6px 10px;
+        border: 1px solid var(--ion-color-tooling);
+        color: var(--ion-color-tooling);
+    }
+}
+
+.related-files {
+    padding: 16px 12px;
+
+    .heading {
+        font-size: 18px;
+        font-weight: 600;
+
+    }
+
+    .files {
+        display: flex;
+        font-size: 16px;
+        padding: 10px 0px;
+        border-bottom: 1px solid #eee;
+        color: var(--ion-color-tooling);
+    }
+
+}
+
+.description {
+    border-bottom: 1px solid #eee;
+    padding: 16px 12px;
+
+    .heading {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .desc {
+        overflow: hidden;
+
+        &.less {
+            max-height: 14vh;
+            transition: max-height 700ms ease
+        }
+
+        &.more {
+            max-height: 100vh;
+            transition: max-height 900ms ease
+        }
+    }
+
+    .see_more {
+        display: flex;
+        font-weight: 600;
+        font-size: 14px;
+        margin: 8px 0px;
+        justify-content: center;
+        color: var(--ion-color-tooling);
+
+        .arrow-rotate-up {
+            transform: rotate(0deg);
+            transition: transform 300ms ease
+        }
+
+        .arrow-rotate-down {
+            transform: rotate(180deg);
+            transition: transform 600ms ease
+        }
+    }
+}
+
+.agenda {
+    padding: 16px 12px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 18px;
+    border-bottom: 1px solid #eee;
+
+    .red {
+        font-size: 24px;
+    }
+}
+
+.speakers {
+    //  padding: 12px;
+    border-bottom: 1px solid #eee;
+
+    .heading {
+        font-size: 18px;
+        font-weight: 600;
+        padding: 0px 12px;
+
+    }
+
+    .list {
+        display: flex;
+        align-items: center;
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+
+            .image {
+                width: 54px;
+                background-image: url(https://randomuser.me/api/portraits/men/41.jpg);
+                height: 54px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                border-radius: 50%;
+            }
+
+            .title {
+                padding: 2px 0px;
+                color: var(--ion-text-color);
+                font-family: 'Gilroy-Bold';
+            }
+
+            .subTitle {
+                font-family: "Gilroy-Normal";
+                color: var(--ion-color-step-700)
+            }
+        }
+
+    }
+}
+
+.feed {
+    ion-card {
+        margin-top: 16px;
+    }
+
+    .feature-image {
+        width: 100%;
+        height: 200px;
+        background-repeat: no-repeat;
+        background-size: inherit;
+        background-position: center;
+
+    }
+
+    .details {
+        display: flex;
+        padding: 10px;
+        align-items: center;
+
+        .avtar {
+            width: 52px;
+            background-image: url(https://i.picsum.photos/id/1011/200/200.jpg);
+            height: 52px;
+            border-radius: 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center
+        }
+
+        .title {
+            font-size: 16px;
+            color: #000;
+            font-weight: 600;
+
+        }
+    }
+
+}
+
+.book_btn {
+    height: 50px;
+    font-size: 22px;
+    margin: 8px 28px;
+    font-weight: 600;
+    --border-radius: 30px;
+}
+
+ion-icon {
+    padding: 0px 4px;
+    font-size: 18px;
+
+    &.normal {
+        color: #4d4d4d;
+    }
+
+    &.red {
+        color: var(--ion-color-tooling);
+    }
+
+
+}
