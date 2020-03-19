@@ -156,8 +156,6 @@ export class EventDetailsPage implements OnInit {
   rotateArrow: boolean = false
 
   constructor(public modalController: ModalController) {
-
-
    }
 
   ngOnInit() {

@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>  {{event_details.title}}</ion-title>
+    <ion-title class="ion-text-center">  {{event_details.title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,20 +11,20 @@
   <div class="featured-image" [ngStyle]="{'background-image': 'url(' + event_details.featuredImage.url + ')'}">
   </div>
   <div class="event-details">
-    <div class="title">
+    <div class="title ion-justify-content-between ion-align-items-center">
       <span>
         {{event_details.title}}
       </span>
       <ion-icon name="share-social-outline" class="normal"></ion-icon>
     </div>
-    <div class="duration">
+    <div class="duration ion-justify-content-between">
       <div class="time">
         <span>
           <ion-icon name="calendar-outline" class="normal"></ion-icon> {{event_details.scheduleStart | date:'E dd LLL'}} -
           {{event_details.scheduleEnd | date:'E dd LLL'}}
         </span>
       </div>
-      <div class="time" style="text-transform: lowercase;">
+      <div class="time ion-text-lowercase ">
         <span>
           <ion-icon name="time-outline" class="normal"></ion-icon> {{event_details.scheduleStart | date:'h:mm a'}} -
           {{event_details.scheduleEnd | date:'h:mm a'}}
@@ -49,7 +49,7 @@
     </div>
     <div class="location">
       <span>
-        <ion-icon  class="  ruppe"></ion-icon>
+        <ion-icon  class="ruppe"></ion-icon>
       </span>
  
       <span>
@@ -57,7 +57,7 @@
       </span>
     </div>
   </div>
-  <div class="interested">
+  <div class="interested ion-align-items-center">
     <span>
 
       <ion-icon name="people" class="normal" style="color:var(--ion-color-step-500)"></ion-icon>
@@ -65,7 +65,7 @@
     <span style="flex: 1;" class="text">
     {{event_details.rsvp}} peeple are Interested
     </span>
-    <span class="interested_box">
+    <span class="interested_box ion-align-items-center">
       Interested ?
     </span>
 
@@ -88,10 +88,10 @@
     <div class="heading">
       Speakers
     </div>
-    <div class="list">
-      <div *ngFor="let speaker of event_details.speakers" class="item">
+    <div class="list ion-align-items-center">
+      <div *ngFor="let speaker of event_details.speakers" class="item ion-justify-content-between">
         <div class="image" [ngStyle]="{'background-image': 'url(' + speaker.featuredImage.url + ')'}"></div>
-       <div class="title"> {{speaker.title}}</div>
+       <div class="title ion-justify-content-between"> {{speaker.title}}</div>
        <div class="subTitle"> {{speaker.subTitle}}</div>
       
       </div>
@@ -99,11 +99,11 @@
   
   </div>
   <div class="speakers">
-    <div class="heading" style="padding-top: 16px;">
+    <div class="heading ion-padding-top" >
       Hosted By
     </div>
-    <div class="list">
-      <div *ngFor="let hosted of event_details.hostedBy"  class="item">
+    <div class="list ion-align-items-center">
+      <div *ngFor="let hosted of event_details.hostedBy"  class="item ion-justify-content-between">
         <div class="image" [ngStyle]="{'background-image': 'url(' + hosted.featuredImage.url + ')'}"></div>
         <div class="title"> {{hosted.title}}</div>
         <div> {{hosted.subTitle}}</div>
@@ -116,7 +116,7 @@
     </div>
     <div [innerHTML]="event_details.description" class="desc" [ngClass]="isShowMore ? 'more' : 'less'">
     </div>
-    <div class="see_more" (click)="toggleText()">
+    <div class="see_more ion-justify-content-center" (click)="toggleText()">
       <span>
         {{isShowMore ? ('SEE LESS'):('SEE MORE')}} 
       </span>
@@ -126,7 +126,7 @@
     </div>
   
   </div>
-  <div class="agenda" (click)="showAgendaModal()">
+  <div class="agenda ion-justify-content-between" (click)="showAgendaModal()">
     <span>
       Agenda
     </span>
@@ -134,7 +134,7 @@
       <ion-icon name="arrow-forward-outline"  class="red"></ion-icon>
     </span>
   </div>
-  <div class="agenda" (click)="showPromoteModal()">
+  <div class="agenda ion-justify-content-between" (click)="showPromoteModal()">
     <span>
       Promoted By
     </span>
@@ -147,7 +147,7 @@
       <div class="feature-image" [ngStyle]="{'background-image': 'url(' + feed.featuredImage.url + ')'}">
       </div>
     
-        <div class="details">
+        <div class="details ion-align-items-center">
           <div class="avtar" [ngStyle]="{'background-image': 'url(' + feed.user.avatar.url + ')'}">
           
           </div>
