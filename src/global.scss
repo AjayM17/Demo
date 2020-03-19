@@ -33,15 +33,15 @@ ion-title{
     font-family: 'Gilroy-Bold';
     .items{
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        .title{
+            flex: 2;
+        }
     }
 }
 
 ion-toolbar{
     --background: var(--ion-color-tooling);
     color:white;
-    text-align: center;
 }
 
 

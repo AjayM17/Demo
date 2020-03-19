@@ -1,7 +1,8 @@
 .modal_header {
     display: flex;
-    justify-content: space-between;
-    font-size: 22px;
+    .icon{
+        font-size:var(--ion-font-size-extra-large)
+    }
 }
 
 ul {
@@ -13,7 +14,6 @@ ul {
         }
         .duration {
             margin-top: 8px;
-            text-transform: lowercase;
         }
     }
 }

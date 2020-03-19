@@ -1,12 +1,12 @@
 <ion-header>
   <ion-toolbar>
-   <div class="modal_header">
-     <span (click)="close()" style="margin-left: 14px;">
+   <div class="modal_header ion-justify-content-between">
+     <span (click)="close()" class="ion-margin-start icon" >
       <ion-icon name="arrow-back-outline"></ion-icon>
      </span>
-     <span style="flex:1">
+     <ion-title class="ion-text-center">
        Agenda
-     </span>
+     </ion-title>
    </div>
   </ion-toolbar>
 </ion-header>
@@ -17,7 +17,7 @@
   <div class="title">
     {{item.title}}
   </div>
-  <div class="duration">
+  <div class="duration ion-text-lowercase">
     {{item.timingStart | date:'h:mm a'}} -
     {{item.timingEnd | date:'h:mm a'}}
   </div>

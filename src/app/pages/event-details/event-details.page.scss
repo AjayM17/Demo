@@ -8,35 +8,28 @@
 
 .event-details {
     padding: 16px 12px;
-
     border-bottom: 1px solid #eee;
 
     .title {
         display: flex;
-        justify-content: space-between;
-        font-size: 24px;
+        font-size: var(--ion-font-size-extra-large);
         font-weight: 600;
         font-family: 'Gilroy-Bold';
     }
 
     .duration {
         display: flex;
-        -webkit-box-pack: justify;
-        justify-content: space-between;
         font-family: "Gilroy-Bold";
         padding: 10px 0px;
-        font-size: 14px;
+        font-size: var(--ion-font-size-small);
         color: var(--ion-color-step-700);
     }
 
     .location {
         display: flex;
         padding: 10px 0px;
-        font-size: 14px;
-
+        font-size: var(--ion-font-size-small);
         font-family: "Gilroy-Bold";
-
-
         color: var(--ion-color-step-700);
         .ruppe{
             background-image: url('../../../assets//icon/rupee.png');
@@ -45,17 +38,13 @@
             background-size: cover;
         }
     }
-
-
 }
 
 .interested {
     display: flex;
-    font-size: 14px;
+    font-size: var(--ion-font-size-small);
     padding: 16px 12px;
     border-bottom: 1px solid #eee;
-    align-items: center;
-
     .text {
         font-family: "Gilroy-Bold";
         color: var(--ion-color-step-500);
@@ -63,8 +52,7 @@
 
     .interested_box {
         display: flex;
-        align-items: center;
-        font-size: 14px;
+        font-size:var(--ion-font-size-small);
         padding: 6px 10px;
         border: 1px solid var(--ion-color-tooling);
         color: var(--ion-color-tooling);
@@ -73,35 +61,28 @@
 
 .related-files {
     padding: 16px 12px;
-
     .heading {
         font-size: 18px;
         font-weight: 600;
-
     }
-
     .files {
         display: flex;
-        font-size: 16px;
+        font-size: var(--ion-font-size-medium);
         padding: 10px 0px;
         border-bottom: 1px solid #eee;
         color: var(--ion-color-tooling);
     }
-
 }
 
 .description {
     border-bottom: 1px solid #eee;
     padding: 16px 12px;
-
     .heading {
-        font-size: 18px;
+        font-size: var(--ion-font-size-medium);
         font-weight: 600;
     }
-
     .desc {
         overflow: hidden;
-
         &.less {
             max-height: 14vh;
             transition: max-height 700ms ease
@@ -112,20 +93,16 @@
             transition: max-height 900ms ease
         }
     }
-
     .see_more {
         display: flex;
         font-weight: 600;
-        font-size: 14px;
+        font-size: var(--ion-font-size-small);
         margin: 8px 0px;
-        justify-content: center;
         color: var(--ion-color-tooling);
-
         .arrow-rotate-up {
             transform: rotate(0deg);
             transition: transform 300ms ease
         }
-
         .arrow-rotate-down {
             transform: rotate(180deg);
             transition: transform 600ms ease
@@ -136,38 +113,29 @@
 .agenda {
     padding: 16px 12px;
     display: flex;
-    justify-content: space-between;
     font-weight: 600;
-    font-size: 18px;
+    font-size: var(--ion-font-size-medium);
     border-bottom: 1px solid #eee;
-
     .red {
         font-size: 24px;
     }
 }
 
 .speakers {
-    //  padding: 12px;
     border-bottom: 1px solid #eee;
-
     .heading {
-        font-size: 18px;
+        font-size: var(--ion-font-size-medium);
         font-weight: 600;
-        padding: 0px 12px;
-
+      padding-left: 12px;
+      padding-right: 12px;
     }
-
     .list {
         display: flex;
-        align-items: center;
-
         .item {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             align-items: center;
             padding: 16px;
-
             .image {
                 width: 54px;
                 background-image: url(https://randomuser.me/api/portraits/men/41.jpg);
@@ -210,8 +178,6 @@
     .details {
         display: flex;
         padding: 10px;
-        align-items: center;
-
         .avtar {
             width: 52px;
             background-image: url(https://i.picsum.photos/id/1011/200/200.jpg);
@@ -234,7 +200,7 @@
 
 .book_btn {
     height: 50px;
-    font-size: 22px;
+    font-size: var(--ion-font-size-medium);
     margin: 8px 28px;
     font-weight: 600;
     --border-radius: 30px;
@@ -242,7 +208,7 @@
 
 ion-icon {
     padding: 0px 4px;
-    font-size: 18px;
+    font-size: var(--ion-font-size-extra-large);
 
     &.normal {
         color: #4d4d4d;
@@ -251,6 +217,5 @@ ion-icon {
     &.red {
         color: var(--ion-color-tooling);
     }
-
 
 }

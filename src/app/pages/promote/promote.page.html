@@ -1,27 +1,24 @@
 <ion-header>
   <ion-toolbar>
-   <div class="modal_header">
-     <span (click)="close()" style="margin-left: 14px;">
+   <div class="modal_header ion-justify-content-between">
+     <span (click)="close()" class="ion-margin-start icon">
       <ion-icon name="arrow-back-outline"></ion-icon>
      </span>
-     <span style="flex:1">
-       Promoted By
-     </span>
+     <ion-title class="ion-text-center">
+      Promoted By
+    </ion-title>
    </div>
   </ion-toolbar>
 </ion-header>
+
 <ion-content>
 <div *ngFor="let item of promote">
-  <div class="item">
-    
+  <div class="item ion-justify-content-center ion-align-items-center">
     <div class="image"  [ngStyle]="{'background-image': 'url(' + item.featuredImage.url + ')'}">
-   
-    
     </div>
     <div class="title">
       {{item.title}}
     </div>
   </div>
-
 </div>
 </ion-content>
