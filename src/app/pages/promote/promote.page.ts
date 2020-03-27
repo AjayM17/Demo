@@ -11,7 +11,6 @@ export class PromotePage implements OnInit {
   promote = null
   constructor(navParams: NavParams ,private modalController: ModalController) {
      this.promote = navParams.get('promote')
-     console.log(this.promote)
    }
 
 

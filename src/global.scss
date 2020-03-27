@@ -44,10 +44,18 @@ ion-toolbar{
     color:white;
 }
 
+ion-content{
+    --background: var(  --ion-background-color);
+}
+
 
 .map{
     background-image: url('./assets//icon//map.png');
     width: 18px;
     height: 22px;   
     background-size: cover;
+}
+
+.flex{
+    display: flex;
 }
