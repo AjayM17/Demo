@@ -11,7 +11,6 @@ export class AgendaPage implements OnInit {
   agenda = null
   constructor(navParams: NavParams ,private modalController: ModalController) {
      this.agenda = navParams.get('agenda')
-     console.log(this.agenda)
    }
 
   ngOnInit() {
