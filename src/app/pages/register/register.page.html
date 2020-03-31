@@ -8,5 +8,56 @@
 </ion-header>
 
 <ion-content>
-<app-custom-fields [customFields]="custom_fields"></app-custom-fields>
+  <form class="ion-margin ion-padding containor"  [formGroup]="registerForm" (ngSubmit)="submitForm()">
+  <div *ngFor="let field of custom_fields">
+    <div [ngSwitch]="field.type">
+      <div *ngSwitchCase="'label'" class="ion-margin-bottom">
+        <app-custom-label [fieldDetails]="field"></app-custom-label>
+      </div>
+
+      <div *ngSwitchCase="'link'" class="ion-margin-bottom">
+       <app-custom-link [fieldDetails]="field"></app-custom-link>
+      </div>
+
+     
+      <div *ngSwitchCase="'text'" class="ion-margin-bottom">
+        <app-custom-input   [formgroup]="registerForm" [fieldDetails]="field"></app-custom-input>
+      </div>
+
+      <div *ngSwitchCase="'textarea'" class="ion-margin-bottom">
+        <app-custom-textarea  [formgroup]="registerForm" [fieldDetails]="field"></app-custom-textarea>
+      </div>
+
+      <div *ngSwitchCase="'select'" class="ion-margin-bottom">
+        <app-custom-select [multiselect]="field.type == multiselect ? true : false" [formgroup]="registerForm" [fieldDetails]="field"></app-custom-select>
+      </div>
+
+      <div *ngSwitchCase="'multiselect'" class="ion-margin-bottom">
+        <app-custom-select [multiselect]="field.type == 'multiselect' ? true : false" [formgroup]="registerForm" [fieldDetails]="field"></app-custom-select>
+      </div>
+
+      <div *ngSwitchCase="'radio'" class="ion-margin-bottom">
+      <app-custom-radio [formgroup]="registerForm" [fieldDetails]="field"></app-custom-radio>
+      </div>
+
+      <div *ngSwitchCase="'ranking'" class="ion-margin-bottom">
+        <app-custom-ranking [fieldDetails]="field" (onReorderd)="setReorder($event)"></app-custom-ranking>
+      </div>
+
+      <div *ngSwitchCase="'toggle'" class="ion-margin-bottom">
+       <app-custom-toggle [fieldDetails]="field" (onValueToggle)="onToggle($event)"></app-custom-toggle>
+      </div>
+
+      <div *ngSwitchCase="'file'" class="ion-margin-bottom">
+        <app-custom-file-upload [fieldDetails]="field" (onFileUpload)="onFileUploaded($event)"></app-custom-file-upload>
+      </div>
+
+      <div *ngSwitchCase="'download'" class="ion-margin-bottom">
+        <app-custom-file-download [fieldDetails]="field"> </app-custom-file-download>
+      </div>
+      
+    </div>
+  </div>
+  <ion-button color="iim" expand="block" class="book_btn" type="submit" [disabled]="!registerForm.valid" >Submit</ion-button>
+</form>
 </ion-content>

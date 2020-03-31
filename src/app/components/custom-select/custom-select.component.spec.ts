@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { CustomFieldsComponent } from './custom-fields.component';
+import { CustomSelectComponent } from './custom-select.component';
 
-describe('CustomFieldsComponent', () => {
-  let component: CustomFieldsComponent;
-  let fixture: ComponentFixture<CustomFieldsComponent>;
+describe('CustomSelectComponent', () => {
+  let component: CustomSelectComponent;
+  let fixture: ComponentFixture<CustomSelectComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CustomFieldsComponent ],
+      declarations: [ CustomSelectComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CustomFieldsComponent);
+    fixture = TestBed.createComponent(CustomSelectComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

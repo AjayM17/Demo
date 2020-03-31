@@ -1,0 +1,9 @@
+<ion-label> {{fieldDetails.label}}</ion-label>
+  <ion-reorder-group (ionItemReorder)="doReorder($event)" disabled="false">
+  <ion-item *ngFor="let option of fieldDetails.options">
+    <ion-label>
+     {{option.label}}
+    </ion-label>
+    <ion-reorder slot="end"></ion-reorder>
+  </ion-item>
+</ion-reorder-group>

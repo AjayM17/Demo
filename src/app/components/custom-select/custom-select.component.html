@@ -1,0 +1,7 @@
+<div [formGroup]="formgroup">
+  <ion-label>{{fieldDetails.label}}</ion-label>
+  <ion-select  [formControlName]="fieldDetails._id" [multiple]="multiselect">
+    <ion-select-option *ngFor="let option of fieldDetails.options" [value]="option.value">{{option.label}}
+    </ion-select-option>
+    </ion-select>
+</div>
