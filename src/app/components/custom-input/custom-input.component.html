@@ -1,3 +1,4 @@
 <div [formGroup]="formgroup">
-    <ion-input  type="text" [placeholder]="placeholder" [formControlName]="controlname" ></ion-input>
+    <ion-label>{{fieldDetails.label}}</ion-label>
+    <ion-input  type="text" [placeholder]="fieldDetails.placeholder" [formControlName]="fieldDetails._id" ></ion-input>
 </div>

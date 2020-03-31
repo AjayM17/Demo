@@ -6,7 +6,15 @@ import { RegisterPageRoutingModule } from './register-routing.module';
 import { RegisterPage } from './register.page';
 // import { ComponentsModule } from '../../components/components.module';
 import { CustomInputComponent } from '../../components/custom-input/custom-input.component'
-import { from } from 'rxjs';
+import { CustomTextareaComponent } from '../../components/custom-textarea/custom-textarea.component'
+import { CustomSelectComponent } from '../../components/custom-select/custom-select.component'
+import { CustomRadioComponent } from '../../components/custom-radio/custom-radio.component'
+import { CustomLabelComponent } from '../../components/custom-label/custom-label.component'
+import { CustomLinkComponent } from '../../components/custom-link/custom-link.component'
+import { CustomRankingComponent } from '../../components/custom-ranking/custom-ranking.component'
+import { CustomToggleComponent } from '../../components/custom-toggle/custom-toggle.component'
+import { CustomFileUploadComponent } from '../../components/custom-file-upload/custom-file-upload.component'
+import { CustomFileDownloadComponent } from '../../components/custom-file-download/custom-file-download.component'
 
 @NgModule({
   imports: [
@@ -15,9 +23,31 @@ import { from } from 'rxjs';
     IonicModule,
     RegisterPageRoutingModule,
     ReactiveFormsModule
-    // ComponentsModule
   ],
-  declarations:[RegisterPage,CustomInputComponent],
-  exports:[CustomInputComponent]
+  declarations:[
+    RegisterPage,
+    CustomTextareaComponent,
+    CustomInputComponent,
+    CustomSelectComponent,
+    CustomRadioComponent,
+    CustomLabelComponent,
+    CustomLinkComponent,
+    CustomRankingComponent,
+    CustomToggleComponent,
+    CustomFileUploadComponent,
+    CustomFileDownloadComponent
+  ],
+  exports:[
+    CustomTextareaComponent,
+    CustomInputComponent,
+    CustomSelectComponent,
+    CustomRadioComponent,
+    CustomLabelComponent,
+    CustomLinkComponent,
+    CustomRankingComponent,
+    CustomToggleComponent,
+    CustomFileUploadComponent,
+    CustomFileDownloadComponent
+  ]
 })
 export class RegisterPageModule {}

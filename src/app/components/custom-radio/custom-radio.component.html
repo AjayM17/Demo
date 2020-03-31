@@ -1,0 +1,13 @@
+<div [formGroup]="formgroup">
+  <ion-label>{{fieldDetails.label}}</ion-label>
+  <ion-radio-group [formControlName]="fieldDetails._id">
+    <ion-grid class="ion-no-padding">
+      <ion-row>
+        <ion-col *ngFor="let option of fieldDetails.options" class="ion-align-items-center">
+          <ion-radio [value]="option.value"></ion-radio>
+          <ion-label class="bold">{{option.label}}</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-radio-group>
+</div>

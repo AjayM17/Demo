@@ -3,172 +3,75 @@ import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.page.html',
-  styleUrls: ['./register.page.scss'],
+	selector: 'app-register',
+	templateUrl: './register.page.html',
+	styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
 
-  custom_fields=[]
-  registerForm: FormGroup;
-  registrationForm= [
-		{
-		  "_id": "5e79cf1ba2481779faa872b6",
-		  "label": "Personal Details",
-		  "placeholder": "",
-		  "description": "",
-		  "key": "personal_detail_label",
-		  "type": "label",
-		  "options": [],
-		  "conditions": [],
-		  "mandatory": false
-		},
-		{
-		  "_id": "5e79d38b0cdadfbe21075dd9",
-		  "label": "Describe yourself in a few words",
-		  "placeholder": "",
-		  "description": "Keep it short",
-		  "key": "about_you",
-		  "type": "textarea",
-		  "options": [],
-		  "conditions": [],
-		  "mandatory": true
-		},
-		{
-		  "_id": "5e79d392c09857b3665bbeeb",
-		  "label": "How much did you get in your grad",
-		  "placeholder": "Grad %",
-		  "description": "",
-		  "key": "percentage",
-		  "type": "text",
-		  "options": [],
-		  "conditions": [],
-		  "mandatory": true
-		},
-		{
-		  "_id": "5e79d39850ea118e31ff35f2",
-		  "label": "Select your country",
-		  "placeholder": "",
-		  "description": "",
-		  "key": "your_country",
-		  "type": "select",
-		  "options": [
-			{"label": "Mumbai", "value": "mumbai"},
-			{"label": "Delhi", "value": "delhi"},
-			{"label": "Bangalore", "value": "bangalore"},
-			{"label": "Hyderabad", "value": "hyderabad"}
-		  ],
-		  "conditions": [],
-		  "mandatory": true
-		},
-		{
-		  "_id": "5e79d3a074417881d8651c59",
-		  "label": "Select your preferred job locattion",
-		  "placeholder": "",
-		  "description": "",
-		  "key": "pref_job_location",
-		  "type": "multiselect",
-		  "options": [
-			{"label": "Mumbai", "value": "mumbai"},
-			{"label": "Delhi", "value": "delhi"},
-			{"label": "Bangalore", "value": "bangalore"},
-			{"label": "Hyderabad", "value": "hyderabad"}
-		  ],
-		  "conditions": [],
-		  "mandatory": true
-		},
-		{
-		  "_id": "5e79d3a6c3b7371c5b54ee0e",
-		  "label": "Upload Resume",
-		  "placeholder": "",
-		  "description": "DOC, DOCX, PDF (5,120KB)",
-		  "key": "resume",
-		  "type": "file",
-		  "options": [],
-		  "conditions": [{"key": "file_type", "value": "doc,docx,pdf"}, {"key": "file_size", "value": "5120"}],
-		  "mandatory": true
-		},
-		{
-		  "_id": "5e79d3adb159b88c208aa4a7",
-		  "label": "What kind of job are you looking for",
-		  "placeholder": "",
-		  "description": "",
-		  "key": "job_type",
-		  "type": "radio",
-		  "options": [{"label": "Internship", "value": "internship"}, {"label": "Full Time", "value": "full-time"}],
-		  "conditions": [],
-		  "mandatory": true
-		},
-		{
-		  "_id": "5e79d3b5f76b7a6b1fdf7527",
-		  "label": "Order companies based on your priority",
-		  "placeholder": "",
-		  "description": "",
-		  "key": "your_country",
-		  "type": "ranking",
-		  "options": [
-			{"label": "Mahindra", "value": "mahindra"},
-			{"label": "Flipkart", "value": "flipkart"},
-			{"label": "P&G", "value": "p&g"},
-			{"label": "Tata Steel", "value": "tata steel"}
-		  ],
-		  "conditions": [],
-		  "mandatory": true
-		},
-		{
-		  "_id": "5e79d3baf5f00e252fce65cc",
-		  "label": "Download Brochure",
-		  "placeholder": "",
-		  "description": "",
-		  "key": "download",
-		  "type": "download",
-		  "options": [],
-		  "conditions": [{"key": "file", "value": "http://www.pdf995.com/samples/pdf.pdf"}],
-		  "mandatory": true
-		},
-		{
-		  "_id": "5e79d3c105b2b573215c94bd",
-		  "label": "Add me to WhatsApp Group",
-		  "placeholder": "",
-		  "description": "",
-		  "key": "whatsapp_add",
-		  "type": "toggle",
-		  "options": [],
-		  "conditions": [],
-		  "mandatory": false
-		},
-		{
-		  "_id": "5e79d3c6dcc2859f040c4c9e",
-		  "label": "Please read our terms and conditions properly before registering",
-		  "placeholder": "",
-		  "description": "",
-		  "key": "t&c",
-		  "type": "link",
-		  "options": [],
-		  "conditions": [{"key": "link", "value": "https://policies.google.com/terms?fg=1"}],
-		  "mandatory": false
+	custom_fields = []
+	registerForm: FormGroup;
+	responseOnSubmit = []
+	
+	constructor(private router: ActivatedRoute, private formBuilder: FormBuilder) {
+		this.router.queryParams.subscribe(params => {
+			 this.custom_fields = JSON.parse(params['registrationForm'])
+		})
+	}
+
+	ngOnInit() {
+		let group: any = {}
+		this.custom_fields.forEach((field,index) => {
+			if (field.type == 'text' || field.type == 'textarea' || field.type == 'select' || field.type == 'multiselect' || field.type == 'radio') {
+				group[field._id] = field.mandatory ? new FormControl('', Validators.required) : new FormControl('')
+			}
+			const value = {
+				"questionId": field['_id'],
+				"questionKey": field['key'],
+				"responses": null,
+				"uploadResponse": null
+			}
+			this.responseOnSubmit.push(value)
+		})
+		this.registerForm = this.formBuilder.group(group)
+	}
+
+	onToggle(param) {
+		const field_index = this.responseOnSubmit.findIndex(field => field.questionId == param._id)
+		if(field_index != -1){
+			this.responseOnSubmit[field_index]['responses']= [param.value]
 		}
-	  ]
-  constructor(private router: ActivatedRoute,private formBuilder: FormBuilder)  { 
-    console.log(this.registrationForm)
-    this.router.queryParams.subscribe(params => {
-     // this.custom_fields = JSON.parse(params['registrationForm'])
-    })
+	}
 
-
-  }
-
-  ngOnInit() {
-	let group: any = {}
-	this.registrationForm.forEach(field => {
-		if (field.type == 'text' || field.type == 'textarea' || field.type == 'select' || field.type == 'multiselect' || field.type == 'radio') {
-			group[field.key] = field.mandatory ? new FormControl('', Validators.required) : new FormControl('')
+	setReorder(param){
+		const field_index = this.responseOnSubmit.findIndex(field => field.questionId == param._id)
+		if(field_index != -1){
+			console.log(field_index)
+			this.responseOnSubmit[field_index]['responses']= param.value
 		}
-	})
-	this.registerForm = this.formBuilder.group(group)
-  }
+	}
 
-  validateForm() {
-	  console.log(this.registerForm.get('percentage'))
-}
+	onFileUploaded(param){
+		const field_index = this.responseOnSubmit.findIndex(field => field.questionId == param._id)
+		if(field_index != -1){
+			this.responseOnSubmit[field_index]['uploadResponse']= param
+		}
+		console.log(this.responseOnSubmit)
+	}
+
+	submitForm() {
+		console.log(this.registerForm.controls)
+		Object.keys(this.registerForm.controls).forEach(_id => {
+			console.log(_id)
+			const field_index = this.responseOnSubmit.findIndex(field => field.questionId == _id)
+			console.log(typeof(this.registerForm.get(_id).value))
+			console.log((this.registerForm.get(_id).value))
+			if(typeof(this.registerForm.get(_id).value) == 'object'){
+				this.responseOnSubmit[field_index]['responses'] = this.registerForm.get(_id).value
+			} else {
+				this.responseOnSubmit[field_index]['responses'] = [this.registerForm.get(_id).value]
+			}
+		})
+		console.log(this.responseOnSubmit)
+	}
 }

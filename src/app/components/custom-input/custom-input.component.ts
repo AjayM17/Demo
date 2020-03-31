@@ -6,13 +6,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./custom-input.component.scss'],
 })
 export class CustomInputComponent implements OnInit {
-  @Input() placeholder
   @Input() formgroup
-  @Input() controlname
+  @Input() fieldDetails
   constructor() { }
 
   ngOnInit() {
-    console.log(this.formgroup)
   }
 
 }

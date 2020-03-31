@@ -1,0 +1,20 @@
+.file {
+    .field_box {
+        border: 1.5px solid var(--ion-color-tooling);
+        border-radius: 6px;
+        font-size: var(--ion-font-size-small);
+        font-weight: 600;
+        padding: 10px 18px;
+        color: var(--ion-color-tooling);
+
+        ion-icon {
+            font-size: var(--ion-font-size-large);
+        }
+    }
+
+    .conditions {
+        color: var(--ion-color-step-450);
+        font-size: var(--ion-font-size-extra-small);
+        margin-top: 8px;
+    }
+}

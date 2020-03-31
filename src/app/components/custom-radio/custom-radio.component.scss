@@ -1,0 +1,14 @@
+ion-label {
+    color: var(--ion-color-step-450);
+    font-size: var(--ion-font-size-small);
+}
+ion-radio-group {
+    display: flex;
+    margin-top: 8px;
+    ion-col {
+        display: flex;
+        ion-radio {
+            margin-right: 4px;
+        }
+    }
+}

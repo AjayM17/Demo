@@ -2,10 +2,9 @@ ion-label {
     color: var(--ion-color-step-450);
     font-size: var(--ion-font-size-small);
 }
-
-ion-input {
+ion-select {
     border: 1px solid var(--ion-color-step-200);
     border-radius: 3px;
+    background: var(--ion-background-color);
     margin-top: 8px;
-    --background: var(--ion-background-color);
 }
