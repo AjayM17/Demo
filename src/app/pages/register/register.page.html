@@ -8,5 +8,15 @@
 </ion-header>
 
 <ion-content>
-<app-custom-fields [customFields]="custom_fields"></app-custom-fields>
+  <form   [formGroup]="registerForm" (ngSubmit)="validateForm()">
+  <div *ngFor="let field of registrationForm">
+    <div [ngSwitch]="field.type">
+      <div *ngSwitchCase="'text'" class="ion-margin-bottom">
+        <app-custom-input [placeholder]="field.placeholder"  [formgroup]="registerForm" [controlname]="field.key"></app-custom-input>
+      </div>
+    </div>
+  </div>
+  <ion-button color="iim" expand="block" class="book_btn" type="submit" >Submit</ion-button>
+</form>
+  <!-- <app-custom-fields [customFields]="custom_fields"></app-custom-fields> -->
 </ion-content>

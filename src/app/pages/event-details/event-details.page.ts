@@ -324,7 +324,7 @@ export class EventDetailsPage implements OnInit {
     };
     const navigationExtras: NavigationExtras = {
       queryParams: param,
-      skipLocationChange: true
+     // skipLocationChange: true
     };
   this.router.navigate(['register'], navigationExtras);
   //this.router.navigate(['ticket']);

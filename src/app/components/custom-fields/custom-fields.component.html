@@ -1,4 +1,5 @@
 <form class="ion-margin ion-padding containor" (ngSubmit)="validateForm()" [formGroup]="registerForm">
+  <input type="file" (change)="fileUpload($event)">
   <div *ngFor="let field of customFields">
     <div [ngSwitch]="field.type">
       
