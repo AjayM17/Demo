@@ -320,11 +320,12 @@ export class EventDetailsPage implements OnInit {
 
   goToRegistrationPage = () =>{
     const param = {
-    registrationForm: JSON.stringify(this.event_details['registrationForm'])
+    registrationForm: JSON.stringify(this.event_details['registrationForm']),
+    event_id: this.event_details['_id']
     };
     const navigationExtras: NavigationExtras = {
       queryParams: param,
-     // skipLocationChange: true
+      skipLocationChange: true
     };
   this.router.navigate(['register'], navigationExtras);
   //this.router.navigate(['ticket']);

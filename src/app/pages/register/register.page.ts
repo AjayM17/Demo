@@ -12,10 +12,13 @@ export class RegisterPage implements OnInit {
 	custom_fields = []
 	registerForm: FormGroup;
 	responseOnSubmit = []
+	event_id=null
 	
 	constructor(private router: ActivatedRoute, private formBuilder: FormBuilder) {
 		this.router.queryParams.subscribe(params => {
+			console.log(params)
 			 this.custom_fields = JSON.parse(params['registrationForm'])
+			 this.event_id = params['event_id']
 		})
 	}
 
@@ -72,6 +75,10 @@ export class RegisterPage implements OnInit {
 				this.responseOnSubmit[field_index]['responses'] = [this.registerForm.get(_id).value]
 			}
 		})
-		console.log(this.responseOnSubmit)
+		const details ={
+			event: this.event_id,
+			registration:this.responseOnSubmit
+		} 
+		console.log(details)
 	}
 }
