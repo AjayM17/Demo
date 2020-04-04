@@ -1,4 +1,11 @@
+.file-input{
+    position: absolute;
+    width: 82%;
+    height: 48px;
+    opacity: 0;
+}
 .file {
+
     .field_box {
         border: 1.5px solid var(--ion-color-tooling);
         border-radius: 6px;
@@ -17,4 +24,8 @@
         font-size: var(--ion-font-size-extra-small);
         margin-top: 8px;
     }
+}
+.error-msg{
+    font-size: var(--ion-font-size-extra-small);
+    color: var(--ion-color-tooling);
 }
