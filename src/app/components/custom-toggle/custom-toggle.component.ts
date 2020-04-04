@@ -15,7 +15,6 @@ export class CustomToggleComponent implements OnInit {
   }
 
   toggleValue(event){
-    console.log(event.detail.checked)
     const param={
       _id: this.fieldDetails._id,
       value : event.detail.checked

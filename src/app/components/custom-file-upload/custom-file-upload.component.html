@@ -1,5 +1,11 @@
-  <div class="file">
-  <div class="flex ion-justify-content-between ion-align-items-center field_box " (click)="uploadFile()">
+
+  
+<div class="file" [formGroup]="formgroup" >
+  <input type="text" style="display: none;" [formControlName]="fieldDetails._id">
+  <div class="file-input">
+    <input type="file"   [accept]="accept_files" (change)="uploadFile($event)">
+  </div>
+  <div class="flex ion-justify-content-between ion-align-items-center field_box ">
     <span>
       {{fieldDetails.label}}
     </span>
@@ -9,5 +15,8 @@
   </div>
   <div class="conditions  ion-text-uppercase">
     <span>{{fieldDetails.description}}</span>
+  </div>
+  <div class="error-msg" *ngIf="!this.formgroup.controls[this.fieldDetails._id].hasError('isEmpty') && this.formgroup.controls[this.fieldDetails._id].hasError('isInValidsize')">
+    File size should be less than {{file_size}} KB
   </div>
 </div>
