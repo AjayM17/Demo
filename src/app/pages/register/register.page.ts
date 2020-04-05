@@ -79,5 +79,6 @@ export class RegisterPage implements OnInit {
 			event: this.event_id,
 			registration:this.responseOnSubmit
 		} 
+		console.log(details)
 	}
 }

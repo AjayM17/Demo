@@ -1,4 +1,5 @@
 <div [formGroup]="formgroup">
   <ion-label>{{fieldDetails.label}}</ion-label>
-  <ion-textarea [placeholder]="fieldDetails.placeholder" type="text" [formControlName]="fieldDetails._id" ></ion-textarea>
+  <ion-textarea *ngIf="!formgroup.controls.hasOwnProperty(fieldDetails._id)" [placeholder]="fieldDetails.placeholder" type="text" ></ion-textarea>
+  <ion-textarea *ngIf="formgroup.controls.hasOwnProperty(fieldDetails._id)" [placeholder]="fieldDetails.placeholder" type="text" [formControlName]="fieldDetails._id" ></ion-textarea>
 </div>

@@ -12,7 +12,7 @@ import { PromotePageModule } from '../app/pages/promote/promote.module';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule ,AgendaPageModule , PromotePageModule],
+  imports: [BrowserModule, IonicModule.forRoot({mode:'md'}), AppRoutingModule ,AgendaPageModule , PromotePageModule],
   providers: [
     StatusBar,
     SplashScreen,

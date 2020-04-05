@@ -172,7 +172,7 @@ export class EventDetailsPage implements OnInit {
         "type": "text",
         "options": [],
         "conditions": [],
-        "mandatory": true
+        "mandatory": false
       },
       {
         "_id": "5e79d39850ea118e31ff35f2",
@@ -215,7 +215,7 @@ export class EventDetailsPage implements OnInit {
         "type": "file",
         "options": [],
         "conditions": [{"key": "file_type", "value": "doc,docx,pdf"}, {"key": "file_size", "value": "5120"}],
-        "mandatory": true
+        "mandatory": false
       },
       {
         "_id": "5e79d3adb159b88c208aa4a7",

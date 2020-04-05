@@ -28,12 +28,20 @@ export class CustomFileUploadComponent implements OnInit {
     })
   }
 
+
+
   uploadFile(event) {
 
     const file = event.target['files'][0]
 
-    this.getFileSize(file.size)
-    if (this.getFileSize(file.size)) {
+    let validate = false
+    if(this.fieldDetails['mandatory']){
+      validate =  this.getFileSize(file.size)
+    } else{
+      validate = true
+    }
+   
+    if (validate) {
       const param = {
         "_id": this.fieldDetails._id,
         "fileName": file.name,
@@ -41,13 +49,19 @@ export class CustomFileUploadComponent implements OnInit {
         "url": "http://www.pdf995.com/samples/pdf.pdf"
       }
       this.onFileUpload.emit(param)
-      this.file_details['empty'] = true
-      this.file_details['size'] = true
-      this.formgroup.get(this.fieldDetails._id).setValue(this.file_details)
+       if(this.fieldDetails['mandatory']){
+        this.file_details['empty'] = true
+        this.file_details['size'] = true
+        this.formgroup.get(this.fieldDetails._id).setValue(this.file_details)
+       }
+     
     } else {
-      this.file_details['empty'] = true
-      this.file_details['size'] = false
-      this.formgroup.get(this.fieldDetails._id).setValue(this.file_details)
+      if(this.fieldDetails['mandatory']){
+        this.file_details['empty'] = true
+        this.file_details['size'] = false
+        this.formgroup.get(this.fieldDetails._id).setValue(this.file_details)
+      }
+     
     }
   }
 
