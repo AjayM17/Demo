@@ -11,6 +11,9 @@ export class CustomInputComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.fieldDetails._id)
+    console.log(this.formgroup.controls)
+    console.log(this.formgroup.controls.hasOwnProperty(this.fieldDetails._id))
   }
 
 }

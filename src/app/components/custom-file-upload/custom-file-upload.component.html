@@ -1,7 +1,8 @@
 
   
 <div class="file" [formGroup]="formgroup" >
-  <input type="text" style="display: none;" [formControlName]="fieldDetails._id">
+  <input type="text"  *ngIf="!formgroup.controls.hasOwnProperty(fieldDetails._id)" style="display: none;">
+  <input type="text"  *ngIf="formgroup.controls.hasOwnProperty(fieldDetails._id)" style="display: none;" [formControlName]="fieldDetails._id">
   <div class="file-input">
     <input type="file"   [accept]="accept_files" (change)="uploadFile($event)">
   </div>
@@ -16,7 +17,7 @@
   <div class="conditions  ion-text-uppercase">
     <span>{{fieldDetails.description}}</span>
   </div>
-  <div class="error-msg" *ngIf="!this.formgroup.controls[this.fieldDetails._id].hasError('isEmpty') && this.formgroup.controls[this.fieldDetails._id].hasError('isInValidsize')">
+  <div class="error-msg" *ngIf="formgroup.controls.hasOwnProperty(fieldDetails._id) && !this.formgroup.controls[this.fieldDetails._id].hasError('isEmpty') && this.formgroup.controls[this.fieldDetails._id].hasError('isInValidsize')">
     File size should be less than {{file_size}} KB
   </div>
 </div>

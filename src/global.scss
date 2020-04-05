@@ -48,6 +48,9 @@ ion-content{
     --background: var(  --ion-background-color);
 }
 
+ion-back-button {
+    --color: white
+}
 
 .map{
     background-image: url('./assets//icon//map.png');
